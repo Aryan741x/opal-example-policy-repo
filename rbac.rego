@@ -4,7 +4,12 @@ package app.rbac
 default allow = false
 
 # Allow access based on roles and permissions
+allow{
+    some i
+    input.action=="login"
+    data.users[input.user].roles[i]==input.role
 
+}
 # Permit policy for employees
 allow {
     some perm
