@@ -43,7 +43,7 @@
       }
     }
   },
-  "role_permissions": {
+  "role_permission": {
     "employee": [
       {
         "action": "view",
