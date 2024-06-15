@@ -2,30 +2,30 @@
 permit(
     principal in Role::"Employee",
     action in [
-        Action::"work:view"
+        Action::"document:view"
     ],
-    resource in ResourceType::"work"
+    resource in ResourceType::"document"
 );
 
 // Permit policy for managers
 permit(
     principal in Role::"Manager",
     action in [
-        Action::"work:create",
-        Action::"work:view",
-        Action::"work:mark_done"
+        Action::"document:create",
+        Action::"document:view",
+        Action::"document:mark_done"
     ],
-    resource in ResourceType::"work"
+    resource in ResourceType::"document"
 );
 
 // Permit policy for senior managers
 permit(
     principal in Role::"SeniorManager",
     action in [
-        Action::"work:create",
-        Action::"work:view",
-        Action::"work:mark_done",
-        Action::"work:delete"
+        Action::"document:create",
+        Action::"document:view",
+        Action::"document:mark_done",
+        Action::"document:delete"
     ],
-    resource in ResourceType::"work"
+    resource in ResourceType::"document"
 );
