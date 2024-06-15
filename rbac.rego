@@ -7,52 +7,24 @@ default allow = false
 
 # Permit policy for employees
 allow {
-    some i,permission
+    some permission
     user_is_granted[permission]
-    input.action == "work:view"
-    input.resource == "work"
-}
-
-# Permit policy for managers
-allow {
-    user_has_role[input.user, "manager"]
-    input.action == "work:create"
-    input.resource == "work"
-}
-
-allow {
-    user_has_role[input.user, "manager"]
-    input.action == "work:view"
-    input.resource == "work"
-}
-
-allow {
-    user_has_role[input.user, "manager"]
-    input.action == "work:mark_done"
-    input.resource == "work"
+    input.action == permission.action
+    input.type == permission.type
 }
 
 # Permit policy for senior managers
 allow {
-    user_has_role[input.user, "senior_manager"]
-    input.action == "work:create"
-    input.resource == "work"
+    user_is_senior
 }
 
-allow {
-    user_has_role[input.user, "senior_manager"]
-    input.action == "work:view"
-    input.resource == "work"
+user_is_senior{
+    some i
+    data.users[input.user].roles[i]=="senior_manager"
 }
 
-allow {
-    user_has_role[input.user, "senior_manager"]
-    input.action == "work:mark_done"
-    input.resource == "work"
-}
-
-allow {
-    user_has_role[input.user, "senior_manager"]
-    input.action == "work:delete"
-    input.resource == "work"
+user_is_granted[permission]{
+    some i,j
+    role:=data.users[input.user].roles[i]
+    permission:=data.role_permission[role][j]
 }
