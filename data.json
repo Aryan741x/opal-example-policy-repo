@@ -2,6 +2,7 @@
   "users": {
     "john_doe": {
       "roles": ["employee"],
+      "password":"john_doe",
       "location": {
         "country": "US",
         "ip": "192.168.1.1"
@@ -9,6 +10,7 @@
     },
     "jane_smith": {
       "roles": ["manager"],
+      "password":"jane_smith",
       "location": {
         "country": "US",
         "ip": "192.168.1.2"
@@ -16,6 +18,7 @@
     },
     "michael_lee": {
       "roles": ["senior_manager"],
+      "password":"michael_lee",
       "location": {
         "country": "US",
         "ip": "192.168.1.3"
@@ -23,6 +26,7 @@
     },
     "susan_clark": {
       "roles": ["employee"],
+      "password":"susan_clark",
       "location": {
         "country": "US",
         "ip": "192.168.1.4"
@@ -30,6 +34,7 @@
     },
     "tom_brown": {
       "roles": ["manager"],
+      "password":"tom_brown",
       "location": {
         "country": "US",
         "ip": "192.168.1.5"
@@ -37,6 +42,7 @@
     },
     "emma_wilson": {
       "roles": ["senior_manager"],
+      "password":"emma_wilson",
       "location": {
         "country": "US",
         "ip": "192.168.1.6"
