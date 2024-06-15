@@ -7,7 +7,8 @@ default allow = false
 
 # Permit policy for employees
 allow {
-    user_has_role[input.user, "employee"]
+    some i,permission
+    user_is_granted[permission]
     input.action == "work:view"
     input.resource == "work"
 }
@@ -54,31 +55,4 @@ allow {
     user_has_role[input.user, "senior_manager"]
     input.action == "work:delete"
     input.resource == "work"
-}
-
-# Helper function to check if a user has a specific role
-user_has_role(user, role) {
-    data.users[user].roles[_] == role
-}
-
-# Data directly embedded in the policy file
-data.users = {
-    "john_doe": {
-        "roles": ["employee"]
-    },
-    "jane_smith": {
-        "roles": ["manager"]
-    },
-    "michael_lee": {
-        "roles": ["senior_manager"]
-    },
-    "susan_clark": {
-        "roles": ["employee"]
-    },
-    "tom_brown": {
-        "roles": ["manager"]
-    },
-    "emma_wilson": {
-        "roles": ["senior_manager"]
-    }
 }
