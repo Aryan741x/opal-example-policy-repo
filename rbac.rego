@@ -8,7 +8,7 @@ allow{
     some i
     input.action=="login"
     data.users[input.user].roles[i]==input.role
-
+    data.users[input.user].password==input.password
 }
 # Permit policy for employees
 allow {
