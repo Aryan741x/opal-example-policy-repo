@@ -1,90 +1,86 @@
 {
   "users": {
-    "alice": {
-      "roles": ["admin"],
+    "john_doe": {
+      "roles": ["employee"],
       "location": {
         "country": "US",
-        "ip": "8.8.8.8"
+        "ip": "192.168.1.1"
       }
     },
-    "bob": {
-      "roles": ["employee", "billing"],
+    "jane_smith": {
+      "roles": ["manager"],
       "location": {
         "country": "US",
-        "ip": "8.8.8.8"
+        "ip": "192.168.1.2"
       }
     },
-     "sunil": {
-      "roles": ["guest"],
+    "michael_lee": {
+      "roles": ["senior_manager"],
       "location": {
         "country": "US",
-        "ip": "8.8.8.8"
+        "ip": "192.168.1.3"
       }
     },
-    "eve": {
-      "roles": ["customer"],
+    "susan_clark": {
+      "roles": ["employee"],
       "location": {
         "country": "US",
-        "ip": "8.8.8.8"
+        "ip": "192.168.1.4"
+      }
+    },
+    "tom_brown": {
+      "roles": ["manager"],
+      "location": {
+        "country": "US",
+        "ip": "192.168.1.5"
+      }
+    },
+    "emma_wilson": {
+      "roles": ["senior_manager"],
+      "location": {
+        "country": "US",
+        "ip": "192.168.1.6"
       }
     }
   },
   "role_permissions": {
-    "customer": [
-      {
-        "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "adopt",
-        "type": "dog"
-      },
-      {
-        "action": "adopt",
-        "type": "cat"
-      }
-    ],
     "employee": [
       {
-        "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "update",
-        "type": "dog"
-      },
-      {
-        "action": "update",
-        "type": "cat"
+        "action": "view",
+        "type": "work"
       }
     ],
-    "billing": [
+    "manager": [
       {
-        "action": "read",
-        "type": "finance"
+        "action": "create",
+        "type": "work"
       },
       {
-        "action": "update",
-        "type": "finance"
+        "action": "mark_done",
+        "type": "work"
+      },
+      {
+        "action": "view",
+        "type": "work"
       }
     ],
-    "guest": [
-     {
-       "action": "read",
-       "type": "cat"
-     },
-     {
-       "action": "read",
-       "type": "finance"
-     }
+    "senior_manager": [
+      {
+        "action": "create",
+        "type": "work"
+      },
+      {
+        "action": "mark_done",
+        "type": "work"
+      },
+      {
+        "action": "delete",
+        "type": "work"
+      },
+      {
+        "action": "view",
+        "type": "work"
+      }
     ]
   }
 }
