@@ -7,10 +7,10 @@ default allow = false
 
 # Permit policy for employees
 allow {
-    some permission
-    user_is_granted[permission]
-    input.action == permission.action
-    input.type == permission.type
+    some perm
+    user_is_granted[perm]
+    input.action == perm.action
+    input.type == perm.type
 }
 
 # Permit policy for senior managers
@@ -23,8 +23,8 @@ user_is_senior{
     data.users[input.user].roles[i]=="senior_manager"
 }
 
-user_is_granted[permission]{
+user_is_granted[perm]{
     some i,j
     role:=data.users[input.user].roles[i]
-    permission:=data.role_permission[role][j]
+    perm:=data.role_permission[role][j]
 }
