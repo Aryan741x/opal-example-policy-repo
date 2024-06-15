@@ -24,7 +24,7 @@ user_is_senior{
 }
 
 user_is_granted[perm]{
-    some i,j
+    some i
     role:=data.users[input.user].roles[i]
-    perm:=data.role_permission[role][j]
+    perm:=data.role_permission[role][_]
 }
